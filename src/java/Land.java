@@ -4,6 +4,10 @@ public class Land extends Main{
     int height;
     int[][] board;
 
+    String humanEmoji = "\uD83D\uDE12";
+    String goblinEmoji = "\uD83E\uDD22";
+    String combatEmoji = "\u2694";
+
     public Land(int width, int height) {
         this.width = width;
         this.height = height;
@@ -19,11 +23,11 @@ public class Land extends Main{
                     if (this.board[x][y] == 0) {
                         line.append("|   |");
                     } else if (this.board[x][y] == 2){
-                        line.append("| G |");
+                        line.append("| ").append(goblinEmoji).append(" |");
                     } else if (this.board[x][y] == 3){
-                        line.append("| X |");
+                        line.append("| ").append(combatEmoji).append(" |");
                     } else {
-                        line.append("| H |");
+                        line.append("| ").append(humanEmoji).append(" |");
                     }
                 }
                 line.append("|");
